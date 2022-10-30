@@ -307,7 +307,7 @@ function getCards(){
 		{ 
 			"suit": "spades",
 			"name": "king",
-			"src": "kS.svg",
+			"src": "KS.svg",
 			"value": 10
 		},
 		{ 
