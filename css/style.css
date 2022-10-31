@@ -1,10 +1,13 @@
-
+@font-face {
+	font-family: myFirstFont;
+	src: url(../font/Harukaze.ttf);
+}
 body {
 	background-image: url("../img/hello2.jpg");
 	background-size: 1600px 900px;
 	text-align: center;
 	font-family: 'Lato', sans-serif;
-	color: #8b6242;
+	color: #b37e55;
 	
 	
 		text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
@@ -12,15 +15,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, .brand-logo {
-	font-family: 'Arvo', serif;
+	font-family: myFirstFont;
 }
 
 h1 {
-	font-size: 4em;
+	font-size: 9em;
 }
 
 h4 {
-	font-size: 1.75em;
+	font-size: 8em;
 }
 
 p {
@@ -28,18 +31,20 @@ p {
 	line-height: 1.75em;
 }
 
+
 strong {
-	font-family: 'Arvo', serif;
+	
+	font-family: myFirstFont;
 	padding: 4px 0;
 	display: block;
-	font-size: 1.10em;
+	font-size:3.5em;
 }
 
 
 button, button:focus {
 	margin: 5px;
 	padding: 10px 20px;
-	background: #4d3626;
+	background: #085f51;
 	color: white;
 	font-size: 1.25em;
 	font-weight: 400;
