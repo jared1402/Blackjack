@@ -294,9 +294,137 @@ namespace Q4
             dogPair.ToString());
 
             Console.ReadKey();
+        
         }
     }
 }
+
+<br>//////////////<br>
+
+
+public partial class Form1 : Form
+{
+
+    int width, height;
+    string path, color;
+
+    public Form1()
+    {
+        InitializeComponent();
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            path = @"C:\Users\Jared Naidoo\Desktop\prg 3b exam prac\2021 16 nov\Q6 2020\Q6 2020\CustomiseAForm.txt";
+            string[] filerecords =
+           File.ReadAllLines(path); if
+           (filerecords[0] == "Blue") this.BackColor = Color.Blue;
+            if (filerecords[0] == "Red") this.BackColor = Color.Red;
+            if (filerecords[0] == "Yellow") this.BackColor =
+            Color.Yellow;
+            width = Convert.ToInt32(filerecords[1]);
+            height = Convert.ToInt32(filerecords[2]);
+            this.Size = new Size(width, height);
+            this.Text = filerecords[3];
+
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+    
+}
+
+    private void radioButton1_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            if (radioButton1.Checked == true) color = "Blue";
+            if (radioButton2.Checked == true) color = "Red";
+            if (radioButton3.Checked == true) color = "Yellow";
+            if (checkBox1.Checked == true)
+                width =450;
+            if (checkBox2.Checked == true)
+                height = 400;
+            path = @"C:\Users\Jared Naidoo\Desktop\prg 3b exam prac\2021 16 nov\Q6 2020\Q6 2020\CustomiseAForm.txt"; ;
+            if
+       (File.Exists(path))
+            {
+                StreamWriter sw = new StreamWriter(path);
+                if (radioButton1.Checked == true) sw.WriteLine(color);
+                if (radioButton2.Checked == true) sw.WriteLine(color);
+                if (radioButton3.Checked == true) sw.WriteLine(color);
+                sw.WriteLine(width);
+                sw.WriteLine(height);
+
+                sw.WriteLine(textBox1.Text);
+                sw.Dispose();
+                MessageBox.Show("settings written successfully!"); 
+        }
+            else
+            {
+                MessageBox.Show("Error 404! File not found!");
+            }
+
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+    }
+} <br> /////// <br>
+class Program
+    {
+        class Pissa
+        {
+
+            private string topping;
+            private int diameter;
+            private double price;
+            public string Topping
+            {
+                get { return topping; }
+                set { topping = value; }
+            }
+            public int Diameter
+            {
+                get { return diameter; }
+                set { diameter = value; }
+            }
+            public double Price
+            {
+                get { return price; }
+                set { price = value; }
+            }
+        }
+
+            static void Main(string[] args)
+        {
+            //creation of pissa class object given a name p 
+            Pissa p = new Pissa();//instatiation of Pissa class 
+            Console.WriteLine("welcome to Pizza Store:");
+            Console.WriteLine("Enter pizza diameter:");
+            p.Diameter = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter pizza topping:");
+            p.Topping = Console.ReadLine();
+            Console.WriteLine("Enter pizza price:");
+            p.Price = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine("\tYour pizza order:");
+            Console.Write("Size:" + p.Diameter * 2 + "\nTopping:" + p.Topping
+           + "\nPrice:" + p.Price.ToString("c"));
+            Console.ReadLine();
+        }
+    }
+    <br> /////// <br>
+
 					</b> </p>
 				</div>
 
